@@ -19,5 +19,7 @@ rad.json
 #License-files
 *.bclicense
 *.flf
+# macOS metadata
+.DS_Store
 #Test results file
 TestResults.xml
