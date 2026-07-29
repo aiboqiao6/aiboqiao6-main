@@ -43,17 +43,21 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url("./assets/ornate-anime-background.jpg") center / cover no-repeat;
-  background-image: -webkit-image-set(
-    url("./assets/ornate-anime-background-1280.webp") 1x,
-    url("./assets/ornate-anime-background-1920.webp") 2x
-  );
-  background-image: image-set(
-    url("./assets/ornate-anime-background-1280.webp") type("image/webp") 1x,
-    url("./assets/ornate-anime-background-1920.webp") type("image/webp") 2x
-  );
+  overflow: hidden;
+  pointer-events: none;
   filter: blur(24px) brightness(0.94) saturate(0.9);
   transform: scale(1.06);
+}
+
+.background picture,
+.background picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.background picture img {
+  object-fit: cover;
 }
 
 .background::after {
