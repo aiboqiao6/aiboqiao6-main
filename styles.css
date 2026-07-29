@@ -42,7 +42,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .background {
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
   filter: blur(24px) brightness(0.94) saturate(0.9);
