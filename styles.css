@@ -218,10 +218,10 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .scroll-cue i { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid var(--border); border-radius: 50%; font-style: normal; }
 
 .info-rail { width: 100%; display: flex; flex-direction: column; gap: 18px; min-width: 0; }
-.info-rail .resume-panel, .info-rail .github-panel, .info-rail .projects-panel { min-width: 0; }
+.info-rail .intro-panel, .info-rail .github-panel, .info-rail .projects-panel { min-width: 0; }
 .info-rail .contact-strip, .info-rail .info-footer { width: 100%; margin: 0; }
 .info-panel { scroll-margin-top: 80px; padding: clamp(26px, 3vw, 36px); border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
-.resume-panel { scroll-margin-top: 80px; padding: clamp(28px, 4vw, 44px); overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); animation: card-enter 680ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.intro-panel { scroll-margin-top: 80px; padding: clamp(28px, 4vw, 44px); border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); animation: card-enter 680ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .info-panel:not([hidden]) { animation: card-enter 680ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .github-panel:not([hidden]) { animation-delay: 70ms; }
 .projects-panel:not([hidden]) { animation-delay: 140ms; }
@@ -236,29 +236,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 .panel-heading > a { color: var(--muted); font-size: 14px; transition: color 160ms ease; }
 .panel-heading > a:hover { color: var(--text); }
 
-.resume-heading { margin-bottom: clamp(34px, 5vw, 54px); }
-.resume-status { color: var(--mint); font-size: 12px; font-weight: 700; }
-.resume-intro { max-width: 760px; }
-.resume-kicker, .resume-label { color: var(--accent); font-size: 12px; font-weight: 700; }
-.resume-intro h3 { max-width: 690px; margin: 12px 0 18px; font-size: clamp(32px, 5vw, 48px); line-height: 1.18; text-wrap: balance; }
-.resume-intro > p:last-child { max-width: 720px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.85; text-wrap: pretty; }
-.resume-grid { display: grid; grid-template-columns: 1fr 1.2fr; margin-top: clamp(34px, 5vw, 52px); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.resume-block { min-width: 0; padding: 28px 28px 30px 0; }
-.resume-block + .resume-block { padding-right: 0; padding-left: 28px; border-left: 1px solid var(--border); }
-.resume-block > p { margin: 14px 0 0; color: var(--muted); font-size: 15px; line-height: 1.78; text-wrap: pretty; }
-.resume-skills { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 22px; margin: 16px 0 0; padding: 0; list-style: none; }
-.resume-skills li { min-width: 0; }
-.resume-skills strong, .resume-skills span { display: block; }
-.resume-skills strong { margin-bottom: 4px; font-size: 15px; }
-.resume-skills span { color: var(--faint); font-size: 12px; line-height: 1.55; }
-.resume-work { margin-top: 34px; }
-.resume-work-heading { display: flex; justify-content: space-between; gap: 20px; padding-bottom: 14px; color: var(--faint); font-size: 12px; }
-.resume-work-item { display: grid; grid-template-columns: 38px minmax(0, 1fr); gap: 16px; padding: 24px 0; border-top: 1px solid var(--border); }
-.resume-work-index { padding-top: 3px; color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
-.resume-work-item h4 { margin: 0 0 9px; font-size: 17px; }
-.resume-work-item h4 a { transition: color 160ms ease; }
-.resume-work-item h4 a:hover { color: var(--accent); }
-.resume-work-item p { max-width: 760px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.78; text-wrap: pretty; }
+.intro-heading { margin-bottom: 22px; }
+.intro-copy { max-width: 820px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.9; text-wrap: pretty; }
+.intro-copy strong { color: var(--text); font-size: 22px; font-weight: 700; }
 
 .github-summary { display: grid; grid-template-columns: minmax(70px, 0.7fr) minmax(0, 1.3fr); gap: 18px; margin-bottom: 28px; }
 .contribution-total { display: grid; grid-template-columns: auto 1fr; align-items: end; gap: 0 6px; padding-right: 8px; border-right: 1px solid var(--border); }
@@ -314,7 +294,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 }
 
 @media (hover: hover) {
-  .identity-stage:hover, .resume-panel:hover, .info-panel:hover, .contact-strip:hover { border-color: rgba(31, 43, 57, 0.22); }
+  .identity-stage:hover, .intro-panel:hover, .info-panel:hover, .contact-strip:hover { border-color: rgba(31, 43, 57, 0.22); }
 }
 
 @media (max-width: 1080px) {
@@ -332,7 +312,7 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .identity-content { display: block; padding: 40px 0 46px; }
   .avatar-wrap { margin-bottom: 28px; }
   .info-rail { gap: 16px; }
-  .resume-panel, .info-panel { scroll-margin-top: 76px; }
+  .intro-panel, .info-panel { scroll-margin-top: 76px; }
 }
 
 @media (max-width: 560px) {
@@ -355,17 +335,9 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
   .profile-numbers strong { font-size: 24px; }
   .stage-footer { align-items: flex-start; flex-direction: column; }
   .scroll-cue { display: none; }
-  .resume-panel { padding: 26px 20px; }
-  .resume-status { display: none; }
-  .resume-intro h3 { margin-top: 10px; font-size: 30px; }
-  .resume-intro > p:last-child { font-size: 14px; line-height: 1.75; }
-  .resume-grid { grid-template-columns: 1fr; margin-top: 32px; }
-  .resume-block { padding: 24px 0; }
-  .resume-block + .resume-block { padding-left: 0; border-top: 1px solid var(--border); border-left: 0; }
-  .resume-skills { grid-template-columns: 1fr; gap: 15px; }
-  .resume-work { margin-top: 28px; }
-  .resume-work-item { grid-template-columns: 28px minmax(0, 1fr); gap: 10px; padding: 21px 0; }
-  .resume-work-item h4 { font-size: 16px; }
+  .intro-panel { padding: 26px 20px; }
+  .intro-copy { font-size: 15px; line-height: 1.8; }
+  .intro-copy strong { font-size: 19px; }
   .info-panel { padding: 26px 20px; }
   .panel-heading { margin-bottom: 28px; }
   .panel-heading h2 { font-size: 20px; }
