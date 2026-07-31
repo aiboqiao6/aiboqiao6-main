@@ -35,7 +35,7 @@ test('styles the introduction as a readable text block', () => {
 });
 
 test('uses the redesigned editorial layout at desktop and mobile breakpoints', () => {
-  assert.match(css, /\.personal-layout\s*\{[\s\S]*grid-template-columns: minmax\(0, 0\.92fr\) minmax\(0, 1\.08fr\)/);
+  assert.match(css, /\.personal-layout\s*\{[^}]*display: flex;[^}]*flex-direction: column/);
   assert.match(css, /\.identity-stage\s*\{[\s\S]*min-height: 0/);
   assert.match(css, /\.identity-content h1\s*\{[\s\S]*white-space: nowrap/);
   assert.match(css, /\.identity-content h1 \.name-cn, \.identity-content h1 \.name-latin\s*\{[\s\S]*display: inline/);
