@@ -33,7 +33,7 @@ const elements = {
 
 function setupNavigation() {
   const links = [...document.querySelectorAll('.top-nav-link')];
-  const getVisibleSections = () => [...document.querySelectorAll('#home, #github, #projects, #contact')]
+  const getVisibleSections = () => [...document.querySelectorAll('#home, #resume, #github, #projects, #contact')]
     .filter((section) => !section.hidden && section.getClientRects().length > 0);
   let navigationLockUntil = 0;
   const setActive = (id) => {
