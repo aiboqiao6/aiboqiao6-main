@@ -9,24 +9,25 @@ const [html, css, script] = await Promise.all([
   readFile(new URL('script.js', rootUrl), 'utf8')
 ]);
 
-test('exposes the resume from the primary navigation', () => {
-  assert.match(html, /class="top-nav-link" href="#resume">简历<\/a>/);
-  assert.match(html, /class="resume-panel" id="resume" aria-labelledby="resumeTitle"/);
-  assert.match(script, /'#home, #resume, #github, #projects, #contact'/);
+test('exposes the introduction from the primary navigation', () => {
+  assert.match(html, /class="top-nav-link" href="#about">简介<\/a>/);
+  assert.match(html, /class="intro-panel" id="about" aria-labelledby="introTitle"/);
+  assert.match(script, /'#home, #about, #github, #projects, #contact'/);
 });
 
-test('presents an evidence-based technical profile', () => {
-  assert.match(html, /id="resumeTitle">个人简历<\/h2>/);
-  assert.match(html, /Windows 系统与桌面体验开发者/);
+test('presents a single concise professional introduction', () => {
+  assert.match(html, /id="introTitle">个人简介<\/h2>/);
+  assert.match(html, /class="intro-copy"/);
+  assert.match(html, /桌面应用开发工程师/);
   assert.match(html, /C\+\+20/);
   assert.match(html, /Qt 6 Quick/);
-  assert.match(html, /macdowsOS Tool/);
-  assert.match(html, /Windows ARM/);
-  assert.doesNotMatch(html, /填写个人简介/);
+  assert.match(html, /ARM \/ x64/);
+  assert.doesNotMatch(html, /class="resume-(?:grid|block|skills|work)/);
+  assert.doesNotMatch(html, /代表产出|INDEPENDENT DEVELOPER/);
 });
 
-test('includes responsive resume layout rules', () => {
-  assert.match(css, /\.resume-panel\s*\{/);
-  assert.match(css, /\.resume-grid\s*\{/);
-  assert.match(css, /@media \(max-width: 560px\)[\s\S]*\.resume-grid/);
+test('styles the introduction as a readable text block', () => {
+  assert.match(css, /\.intro-panel\s*\{/);
+  assert.match(css, /\.intro-copy\s*\{/);
+  assert.doesNotMatch(css, /\.resume-grid\s*\{/);
 });
