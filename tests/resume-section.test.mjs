@@ -36,5 +36,5 @@ test('uses the redesigned editorial layout at desktop and mobile breakpoints', (
   assert.match(css, /\.personal-layout\s*\{[\s\S]*grid-template-columns: minmax\(0, 0\.92fr\) minmax\(0, 1\.08fr\)/);
   assert.match(css, /\.identity-stage\s*\{[\s\S]*min-height: min\(calc\(100vh - 132px\), 760px\)/);
   assert.match(css, /\.top-nav\s*\{[\s\S]*width: min\(560px/);
-  assert.match(css, /@media \(max-width: 860px\)[\s\S]*\.personal-layout\s*\{\s*display: block;/);
+  assert.match(css, /@media \(max-width: 860px\)[\s\S]*\.personal-layout\s*\{[\s\S]*display: block;/);
 });
